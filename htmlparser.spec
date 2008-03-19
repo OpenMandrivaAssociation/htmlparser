@@ -8,6 +8,7 @@ License:	LGPLv2+
 URL:		http://www.htmlparser.org/
 BuildRequires:	java-rpmbuild java-devel jpackage-utils
 BuildRequires:	xml-commons-apis junit
+BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 %description
 HTML Parser is a Java library used to parse HTML in either a linear or
