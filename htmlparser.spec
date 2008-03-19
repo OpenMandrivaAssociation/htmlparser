@@ -7,7 +7,7 @@ Group:		Development/Java
 License:	LGPLv2+
 URL:		http://www.htmlparser.org/
 BuildRequires:	java-rpmbuild java-devel jpackage-utils
-BuildRequires:	xml-commons-apis junit
+BuildRequires:	xml-commons-apis junit ant
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 %description
