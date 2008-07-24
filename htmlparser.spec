@@ -1,7 +1,7 @@
 Name:		htmlparser
 Summary:	Java library used to parse HTML
 Version:	1.6
-Release:	%mkrel 1
+Release:	%mkrel 3
 Source:		htmlparser1_6_20060610.zip
 Group:		Development/Java
 License:	LGPLv2+
