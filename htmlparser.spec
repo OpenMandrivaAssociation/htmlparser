@@ -1,15 +1,14 @@
 Name:		htmlparser
 Summary:	Java library used to parse HTML
 Version:	1.6
-Release:	%mkrel 6
-Source:		htmlparser1_6_20060610.zip
+Release:	6
+Source0:		htmlparser1_6_20060610.zip
 Group:		Development/Java
 License:	LGPLv2+
 URL:		http://www.htmlparser.org/
 BuildRequires:	java-rpmbuild java-devel jpackage-utils
 BuildRequires:	xml-commons-apis junit ant
 BuildArch:	noarch
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 %description
 HTML Parser is a Java library used to parse HTML in either a linear or
 nested fashion. Primarily used for transformation or extraction, it
@@ -31,7 +30,6 @@ export CLASSPATH=`build-classpath sax2 junit`
 %ant
 
 %install
-%{__rm} -Rf %{buildroot}
 %{__mkdir_p} %{buildroot}%{_javadir}
 %{__install} -m644 lib/htmllexer.jar %{buildroot}%{_javadir}/htmllexer-%{version}.jar
 %{__install} -m644 lib/htmlparser.jar %{buildroot}%{_javadir}/htmlparser-%{version}.jar
@@ -41,10 +39,7 @@ export CLASSPATH=`build-classpath sax2 junit`
 %{__mv} docs html
 
 %{__mkdir_p} %{buildroot}%{_javadocdir}
-%{__cp} -a javadoc %{buildroot}%{_javadocdir}/%{name}-%{version}
-
-%clean
-%{__rm} -Rf %{buildroot}
+cp -a javadoc %{buildroot}%{_javadocdir}/%{name}-%{version}
 
 %files
 %doc readme.txt license.txt html
@@ -55,3 +50,27 @@ export CLASSPATH=`build-classpath sax2 junit`
 
 %files javadoc
 %{_javadocdir}/%{name}-%{version}
+
+
+%changelog
+* Fri Dec 10 2010 Oden Eriksson <oeriksson@mandriva.com> 1.6-6mdv2011.0
++ Revision: 619486
+- the mass rebuild of 2010.0 packages
+
+* Fri Sep 11 2009 Thierry Vignaud <tv@mandriva.org> 1.6-5mdv2010.0
++ Revision: 437901
+- rebuild
+
+* Fri Mar 06 2009 Antoine Ginies <aginies@mandriva.com> 1.6-4mdv2009.1
++ Revision: 350287
+- 2009.1 rebuild
+
+* Thu Jul 24 2008 Thierry Vignaud <tv@mandriva.org> 1.6-3mdv2009.0
++ Revision: 247040
+- rebuild
+
+* Wed Mar 19 2008 Nicolas Vigier <nvigier@mandriva.com> 1.6-1mdv2008.1
++ Revision: 188882
+- import htmlparser
+
+
